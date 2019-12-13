@@ -1,0 +1,71 @@
+<html>
+<head>
+</head>
+<body>
+    <h3>MAPA:</h3>
+    <h4>El mapa en X: <%= @mapaX %></h4>
+    <h4>El mapa en Y: <%= @mapaY %></h4>
+    <br>
+    <h3>Posicion Inicial: </h3>
+    <h4>X: <%= @carX %></h4>
+    <h4>Y: <%= @carY %></h4>
+    <h4>Orientacion: <%= @carO %></h4>
+
+    <div class="container">
+        <table border="5">
+            <% for f in 0..(@@mapa.getYMap()-1) do %>
+                <tr>
+                    <% for c in 0..(@@mapa.getXMap()-1) do %>
+                        <% if f==(@@auto.getYorigen()-1) && c==(@@auto.getXorigen()-1)%>
+                            <td> A </td>
+                        <% else %>
+                            <td> __ </td>
+                        <% end %>
+                    <% end %>   
+                </tr>
+            <% end %>
+        </table>
+    </div>
+
+    <h3>Recorrido: </h3>
+    <h4>camino: <%= @recorrido %></h4>
+    <h3>Posicion Final: </h3>
+    <h3>Pos final X: <%=@@auto.getXF%> ,Y: <%=@@auto.getYF%> ,O: <%=@@auto.getOF%></h3>
+
+    <div class="container">
+        <table border="5">
+            <% for f in 0..(@@mapa.getYMap()-1) do %>
+                <tr>
+                    <% for c in 0..(@@mapa.getXMap()-1) do %>
+                        <% if f==(@@auto.getYF()-1) && c==(@@auto.getXF()-1)%>
+                            <td> A </td>
+                        <% else %>
+                            <td> __ </td>
+                        <% end %>
+                    <% end %>   
+                </tr>
+            <% end %>
+        </table>
+    </div>
+
+</body>
+<style>
+    body{
+        background-color: rgb(10, 85, 98);;
+        color: #ffffff;
+    }
+    h1{
+        color: #ffffff;
+    }
+        .container{
+        margin: 0 auto;
+        width: 1000px;
+
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-shadow: -1px 1px 10px 10px slategray;
+        background: rgba(10, 85, 98, .2);
+    }
+</style>
+</html>
