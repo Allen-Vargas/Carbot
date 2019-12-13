@@ -5,3 +5,4 @@ Feature:
 
     Scenario:
     Given visito la pagina del resultado
+    Then vere la posicion con un el valor de "A" en la tabla
